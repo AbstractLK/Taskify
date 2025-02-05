@@ -1,3 +1,40 @@
 /* .App {
   text-align: center;
 } */
+
+header {
+  border-radius: 5px;
+  background-color: #282c34;
+  min-height: 5vh;
+  max-height: 8vh;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: calc(8px + 2vmin);
+  color: white;
+}
+
+/* .logo {
+   align-items: center;
+  justify-content: center;
+  margin: 5px;
+  text-align: center;
+  height: 10vmin;
+  pointer-events: none; 
+} */
+
+.logo img {
+  max-height: 90%;
+  height: 75%;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.logo span {
+  position: absolute;
+  top: 25px;
+  /* font-size: 1em; */
+  /* font-weight: bold; */
+  margin-left: 10px;
+}
