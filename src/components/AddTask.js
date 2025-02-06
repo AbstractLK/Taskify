@@ -15,8 +15,6 @@ export const AddTask = ({ taskList, setTaskList, editTask, setEditTask }) => {
           : task
       );
       setTaskList(updatedTask);
-      setEditTask("");
-      e.target.task.value = "";
     } else {
       const date = new Date();
       const newTask = {
@@ -25,9 +23,8 @@ export const AddTask = ({ taskList, setTaskList, editTask, setEditTask }) => {
         date: `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`,
       };
       setTaskList([newTask, ...taskList]);
-      e.target.task.value = "";
-      setEditTask("");
     }
+    setEditTask({});
   };
 
   return (
@@ -36,14 +33,14 @@ export const AddTask = ({ taskList, setTaskList, editTask, setEditTask }) => {
         <input
           type="text"
           placeholder="Add Task"
-          value={editTask.name}
+          value={editTask.name || ""}
           name="task"
           onChange={(e) => setEditTask({ ...editTask, name: e.target.value })}
           autoComplete="off"
           maxLength="25"
         />
-        <button type="submit" className="btn">
-          Add
+        <button type="submit" className={`btn ${editTask.id ? "" : "primary"}`}>
+          {editTask.id ? "Update" : "Add"}
         </button>
       </form>
     </section>
