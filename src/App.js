@@ -7,12 +7,13 @@ import './App.css';
 
 function App() {
 	const [taskList, setTaskList] = useState([]);
+	const [editTask, setEditTask] = useState({});
 
   return (
     <div className="App">
       <Header />
-      <AddTask taskList={taskList} setTaskList={setTaskList} />
-      <TaskList taskList={taskList} setTaskList={setTaskList} />
+      <AddTask taskList={taskList} setTaskList={setTaskList} editTask={editTask} setEditTask={setEditTask}/>
+      <TaskList taskList={taskList} setTaskList={setTaskList} editTask={editTask} setEditTask={setEditTask} />
       <Footer />
     </div>
   );
